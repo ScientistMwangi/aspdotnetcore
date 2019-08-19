@@ -1,0 +1,18 @@
+﻿@model Configs.ViewModels.HomeDetailsViewModel
+@{ 
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.PageTitle = "Users Details List";
+}
+    <h1>Detail View of HomeController of Detail Action</h1>
+
+
+<div class="card m-3">
+    <h4>@Model.employee.Name</h4>
+    <div class="card-footer">
+            <a asp-controller="home" asp-action="index"  asp-route-id="@Model.employee.Id" btn btn-primary m-1">Asp Tag Link</a>
+            
+            <a href="@Url.Action("index","home",new { id=@Model.employee.Id})" class="btn btn-primary m-1">Back</a>
+            <a href="@Url.Action("index","home",new { id=@Model.employee.Id})" class="btn btn-secondary m-1">Edit</a>
+            <a href="@Url.Action("index","home",new { id=@Model.employee.Id})" class="btn btn-danger m-1">Delete</a>
+    </div>
+ </div>

@@ -1,0 +1,33 @@
+﻿@model Configs.Models.Employees
+
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.PageTitle = "Users Details List";
+}
+
+<form asp-controller="home" asp-action="create" method="post">
+    <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+
+    </div>
+    <div>
+        <label asp-for="Email"></label>
+        <input asp-for="Email" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+
+    </div>
+    <div>
+        <label asp-for="Department"></label>
+        <select asp-for="Department" asp-items="Html.GetEnumSelectList<Configs.Models.Dept>()" ></select>
+
+    </div>
+    <div>
+        <span asp-validation-summary="All" class="text-danger"></span>
+    </div>
+    <div>
+        <button class="btn btn-primary">Create</button>
+    </div>
+</form>

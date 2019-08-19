@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <h1>Detail View of HomeController of Detail Action</h1>
+    <h4>@ViewData["PageTitle"]</h4>
+    @{
+        var Employees = ViewData["Employee"] as Configs.Models.Employees;
+    }
+
+    <div>Name: @Employees.Name</div>
+    <div>Email: @Employees.Email</div>
+    <div>Department: @Employees.Department</div>
+</body>
+</html>
